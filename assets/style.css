@@ -1,0 +1,387 @@
+/* ============================================================
+   Bangalore House Price Prediction — Theme
+   Ocean Blue / Bangalore design system
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-deep-ocean: #0B3C5D;
+  --color-ocean: #1565C0;
+  --color-blue: #1976D2;
+  --color-light-blue: #EAF4FF;
+  --color-white: #FFFFFF;
+  --color-text-dark: #102A43;
+  --color-text-muted: #627D98;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-soft: 0 8px 30px rgba(11, 60, 93, 0.08);
+  --shadow-card: 0 12px 40px rgba(11, 60, 93, 0.12);
+}
+
+/* ---------- Base layout cleanup ---------- */
+
+html, body, [class*="css"] {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+}
+/* ---------- Main Page Background ---------- */
+
+.stApp {
+  background: linear-gradient(
+    135deg,
+    #062F49 0%,
+    #011b27 45%,
+    #02252f 100%
+  );
+  min-height: 100vh;
+}
+
+/* Main content area */
+.main {
+  background: transparent;
+}
+
+/* Streamlit content container */
+.block-container {
+  background: transparent;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  max-width: 1100px;
+}
+/* Trim Streamlit's default top padding so content sits closer to the top */
+.block-container {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  max-width: 1100px;
+}
+
+/* Hide the default Streamlit hamburger/footer chrome for a cleaner product feel */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header[data-testid="stHeader"] {background: transparent;}
+
+/* ---------- Typography scale ---------- */
+
+h1, h2, h3, .display-heading {
+  font-family: var(--font-display);
+  color: var(--color-deep-ocean);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 2.6rem;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+p, span, label, .stMarkdown {
+  font-family: var(--font-body);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+/* ---------- Buttons ---------- */
+
+.stButton > button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  background: var(--color-ocean);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.65rem 1.75rem;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.stButton > button:hover {
+  background: var(--color-deep-ocean);
+  transform: translateY(-1px);
+}
+
+.stButton > button:focus-visible {
+  outline: 3px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+/* ---------- Inputs ---------- */
+
+.stSelectbox > div > div,
+.stNumberInput > div > div > input,
+.stSlider {
+  font-family: var(--font-body);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  h1 { font-size: 1.9rem; }
+  .block-container { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* ============================================================
+   Hero Section
+   ============================================================ */
+
+.hero {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 2.5rem;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Fallback background: gradient (used when no real photo is supplied) */
+.hero.hero--fallback {
+  background: linear-gradient(135deg, var(--color-deep-ocean) 0%, var(--color-ocean) 55%, var(--color-blue) 100%);
+}
+
+/* Overlay for readability, used on top of a real photo background */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 60, 93, 0.78) 0%, rgba(11, 60, 93, 0.55) 60%, rgba(11, 60, 93, 0.85) 100%);
+}
+
+.hero-skyline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 3rem;
+  max-width: 640px;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 2.9rem;
+  line-height: 1.12;
+  font-weight: 600;
+  color: var(--color-white);
+  margin: 0 0 0.9rem 0;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .hero { min-height: 320px; }
+  .hero-content { padding: 2rem 1.5rem; }
+  .hero-title { font-size: 2rem; }
+  .hero-subtitle { font-size: 0.98rem; }
+}
+
+/* ============================================================
+   Prediction Card (glassmorphism)
+   ============================================================ */
+
+div[class*="st-key-prediction_card"] {
+  background: rgba(234, 244, 255, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 2rem;
+}
+
+.card-heading {
+  font-family: var(--font-display);
+  color: var(--color-deep-ocean);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+}
+
+.field-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--color-text-dark);
+  margin-bottom: 0.2rem;
+}
+
+div[class*="st-key-prediction_card"] .stButton > button {
+  width: 100%;
+  font-size: 1.05rem;
+  padding: 0.8rem 1.5rem;
+}
+
+@media (max-width: 640px) {
+  div[class*="st-key-prediction_card"] {
+    padding: 1.4rem 1.2rem;
+  }
+}
+
+/* ============================================================
+   Result Card
+   ============================================================ */
+
+div[class*="st-key-result_card"] {
+  background: linear-gradient(135deg, var(--color-deep-ocean) 0%, var(--color-ocean) 100%);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem 2.25rem;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 2rem;
+  color: var(--color-white);
+}
+
+.result-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.4rem;
+}
+
+.result-price {
+  font-family: var(--font-display);
+  font-size: 3.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.result-caption {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 1.4rem;
+}
+
+.result-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding-top: 1.2rem;
+}
+
+.result-summary-item .k {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 0.15rem;
+}
+
+.result-summary-item .v {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+@media (max-width: 640px) {
+  .result-price { font-size: 2.2rem; }
+  .result-summary { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   ABOUT THE MODEL — DARK BLUE EXPANDER
+   ============================================================ */
+
+/* Expander outer container */
+div[data-testid="stExpander"] {
+    background: linear-gradient(
+        135deg,
+        #062F49 0%,
+        #0B3C5D 55%,
+        #0E5475 100%
+    ) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-card) !important;
+    overflow: hidden;
+}
+
+/* "About the Model" header */
+div[data-testid="stExpander"] details > summary {
+    background: #F5F7FA !important;
+    color: #063B52 !important;
+    border: none !important;
+}
+
+/* Header text */
+div[data-testid="stExpander"] details > summary p,
+div[data-testid="stExpander"] details > summary span {
+    color: #063B52 !important;
+}
+
+/* Expanded content area */
+div[data-testid="stExpander"] details > div {
+    background: linear-gradient(
+        135deg,
+        #062F49 0%,
+        #0B3C5D 55%,
+        #0E5475 100%
+    ) !important;
+}
+
+/* Text inside the card */
+div[data-testid="stExpander"] p,
+div[data-testid="stExpander"] span,
+div[data-testid="stExpander"] label {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Bold text */
+div[data-testid="stExpander"] strong {
+    color: #FFFFFF !important;
+}
+
+/* Model statistics / large numbers */
+div[data-testid="stExpander"] [data-testid="stMetricValue"] {
+    color: #FFFFFF !important;
+}
+
+div[data-testid="stExpander"] [data-testid="stMetricLabel"] {
+    color: rgba(255, 255, 255, 0.70) !important;
+}
