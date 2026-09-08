@@ -589,8 +589,6 @@ This project demonstrates how Machine Learning can support real-estate decision-
 
 # Key Learnings
 
-[svg](https://github.com/viveksinghh29/Bangalore-House-Price-Prediction#key-learnings)
-
 * Data Cleaning & Preprocessing
 * Exploratory Data Analysis
 * Feature Engineering
@@ -609,8 +607,6 @@ This project demonstrates how Machine Learning can support real-estate decision-
 ---
 
 # Future Improvements
-
-[svg](https://github.com/viveksinghh29/Bangalore-House-Price-Prediction#future-improvements)
 
 * Improve model performance with additional location and property features
 * Experiment with advanced boosting algorithms
